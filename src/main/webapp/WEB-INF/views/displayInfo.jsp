@@ -17,7 +17,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	
 <script>
-function submitForm() {
+/*function submitForm() {
     var name = jQuery("#id").val();
 
     $.ajax({
@@ -36,7 +36,7 @@ function submitForm() {
         }
     }); 
    
-}
+}*/
 </script>
 
  <style>
@@ -128,13 +128,13 @@ function submitForm() {
 				</tr>
 			</thead>
 			<tr>
-				<td><c:out value="${dogId.getId()}"/></td>
-				<td><c:out value="${dogId.getName()}"/></td>
-				<td><c:out value="${dogId.getHeartbeat()}"/></td>
-				<td><c:out value="${dogId.getWeight()}"/></td>
-				<td><c:out value="${dogId.getTemperature()}"/></td>
-				<td><c:out value="${dogId.getLat()}"/></td>
-				<td><c:out value="${dogId.getLon()}"/></td>
+				<td><c:out value="${dogId.id}"/></td>
+				<td><c:out value="${dogId.name}"/></td>
+				<td><c:out value="${dogId.heartbeat}"/></td>
+				<td><c:out value="${dogId.weight}"/></td>
+				<td><c:out value="${dogId.temperature}"/></td>
+				<td><c:out value="${dogId.lat}"/></td>
+				<td><c:out value="${dogId.lon}"/></td>
 				
 				<td>
 					<div class="row">
@@ -170,25 +170,25 @@ function submitForm() {
 			</thead>
 			<c:forEach items="${listOfDogs}" var="listDog">
 				<tr>
-					<td><c:out value="${listDog.getId()}"/></td>
-					<td><c:out value="${listDog.getName()}"/></td>
-					<td><c:out value="${listDog.getHeartbeat()}"/></td>
-					<td><c:out value="${listDog.getWeight()}"/></td>
-					<td><c:out value="${listDog.getTemperature()}"/></td>
-					<td><c:out value="${listDog.getLat()}"/></td>
-					<td><c:out value="${listDog.getLon()}"/></td>
+					<td><c:out value="${listDog.id}"/></td>
+					<td><c:out value="${listDog.name}"/></td>
+					<td><c:out value="${listDog.heartbeat}"/></td>
+					<td><c:out value="${listDog.weight}"/></td>
+					<td><c:out value="${listDog.temperature}"/></td>
+					<td><c:out value="${listDog.lat}"/></td>
+					<td><c:out value="${listDog.lon}"/></td>
 					
 					
 					<td>
 					<div class="row">
 					<div class="col-md-3">
 					<form:form action="edit" method="get">
-					<input type="hidden" name="dogID" value="${listDog.getId()}"/>
+					<input type="hidden" name="dogID" value="${listDog.id}"/>
 					<input type="submit" class="btn-info" value="Edit" name="edit" id="edit"/>
 					</form:form></div>
 					
 					<div class="col-md-3"><form:form action="delete" method="get">
-					<input type="hidden" name="id" value="${listDog.getId()}"/>
+					<input type="hidden" name="id" value="${listDog.id}"/>
 					<input type="submit" class="btn-danger"  value="Delete" name="delete" id="delete"/>
 					</form:form></div></div>
 					</td>
